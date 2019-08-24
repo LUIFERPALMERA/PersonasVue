@@ -26,6 +26,15 @@
 
 <script>
 export default {
-  name: 'Media'
+  name: 'Media',
+  data(){
+      return{
+
+      }
+  },mounted(){
+      EventBus.$on('buscar-personas',data=>{
+          this.personas = data;
+      })
+  }
 }
 </script>

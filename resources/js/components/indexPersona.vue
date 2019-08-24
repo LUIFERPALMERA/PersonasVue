@@ -10,10 +10,11 @@
                 <span class="md-title">{{nombre_app}}</span>
             </div>
             <vue-fuse 
-                :keys="keys" 
-                :list="bikes" 
-                :defaultAll="false" 
-                :eventName="bikesChanged"
+                :keys="personas_keys" 
+                :list="personas" 
+                :defaultAll="true"
+                :threshold="0.3"
+                @fuseResultsUpdated="results($event)"
                 class="fuse">
             </vue-fuse>
             <div class="md-toolbar-section-end">
@@ -51,7 +52,9 @@
 
       <md-app-content>
         <card-persona></card-persona>
-        <md-button class="md-fab md-primary md-fab-bottom-right">
+        <empty-persona></empty-persona>
+        <agregar-persona></agregar-persona>
+        <md-button class="md-fab md-primary md-fab-bottom-right" @click="activar_ventana_agregar()">
             <md-icon>add</md-icon>
         </md-button>
       </md-app-content>
@@ -82,7 +85,45 @@ export default {
   name: 'Reveal',
   data: () => ({
     menuVisible: false,
-    nombre_app: 'Personas-Vue'
-  })
+    nombre_app: 'Personas-Vue',
+    personas:[],
+    personas_keys:['cedula','nombre','apellido']
+  }),
+  created(){
+      this.personas = [
+          {
+              id:1,
+              cedula: "123456789",
+              nombre: "Luis",
+              apellido: "Palmera",
+              sexo: 1,
+              nombre_sexo: "Masculino"
+          },
+          {
+              id:2,
+              cedula: "123456788",
+              nombre: "Fernando",
+              apellido: "Escorcia",
+              sexo: 1,
+              nombre_sexo: "Masculino"
+          },
+          {
+              id:1,
+              cedula: "123456129",
+              nombre: "Tania",
+              apellido: "Escorcia",
+              sexo: 2,
+              nombre_sexo: "Femenino"
+          }
+      ]
+  },
+  methods:{
+      activar_ventana_agregar(){
+          EventBus.$emit("activar-ventana-agregar",true);
+      },
+      results(data){
+        EventBus.$emit("buscar-personas",data);
+      }
+  }
 }
 </script>
