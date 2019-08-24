@@ -52,7 +52,7 @@
 
       <md-app-content>
         <card-persona></card-persona>
-        <empty-persona></empty-persona>
+        <empty-persona v-if="personas.length == 0"></empty-persona>
         <agregar-persona></agregar-persona>
         <md-button class="md-fab md-primary md-fab-bottom-right" @click="activar_ventana_agregar()">
             <md-icon>add</md-icon>
@@ -108,7 +108,7 @@ export default {
               nombre_sexo: "Masculino"
           },
           {
-              id:1,
+              id:3,
               cedula: "123456129",
               nombre: "Tania",
               apellido: "Escorcia",

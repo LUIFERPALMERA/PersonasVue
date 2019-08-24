@@ -1,19 +1,29 @@
 <template>
-    <md-card>
-      <md-card-header>
-        <md-avatar class="md-avatar-icon md-primary">A</md-avatar>
-        <md-card-header-text>
-          <div class="md-title">Media card</div>
-          <div class="md-subhead">Normal size</div>
-        </md-card-header-text>
-      </md-card-header>
+    <div>
+        <md-card v-for="persona in personas" :key="persona.id">
+            <md-card-header>
+                <md-avatar class="md-avatar-icon md-primary">{{persona.nombre.toUpperCase().charAt(0)}}</md-avatar>
+                <md-card-header-text>
+                <div class="md-title">{{persona.nombre+" "+ persona.apellido}}</div>
+                <div class="md-subhead">{{persona.cedula}}</div>
+                </md-card-header-text>
+            </md-card-header>
 
-      <md-card-actions>
-        <md-button>Ver</md-button>
-        <md-button>Editar</md-button>
-        <md-button>Eliminar</md-button>
-      </md-card-actions>
-    </md-card>
+            <md-card-actions>
+                <md-button @click="activar_ventana_ver(persona)">Ver</md-button>
+                <md-button>Editar</md-button>
+                <md-button @click="eliminar=true">Eliminar</md-button>
+            </md-card-actions>
+        </md-card>
+        <md-dialog-confirm
+        :md-active.sync="eliminar"
+        md-title="Eliminar"
+        md-content="¿Está seguro que desea eliminar la persona?"
+        md-confirm-text="Si"
+        md-cancel-text="No"
+        @md-confirm="eliminar_si" />
+        <ver-persona></ver-persona>
+    </div>
 </template>
 <style lang="scss" scoped>
   .md-card {
@@ -29,12 +39,21 @@ export default {
   name: 'Media',
   data(){
       return{
-
+          personas:[],
+          eliminar:false
       }
   },mounted(){
       EventBus.$on('buscar-personas',data=>{
           this.personas = data;
       })
+  },
+  methods:{
+      activar_ventana_ver(persona){
+          EventBus.$emit("activar-ventana-ver",persona);
+      },
+      eliminar_si(){
+          alert("Se va a eliminar");
+      }
   }
 }
 </script>

@@ -1943,10 +1943,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Media',
   data: function data() {
-    return {};
+    return {
+      personas: [],
+      eliminar: false
+    };
   },
   mounted: function mounted() {
     var _this = this;
@@ -1954,6 +1967,14 @@ __webpack_require__.r(__webpack_exports__);
     EventBus.$on('buscar-personas', function (data) {
       _this.personas = data;
     });
+  },
+  methods: {
+    activar_ventana_ver: function activar_ventana_ver(persona) {
+      EventBus.$emit("activar-ventana-ver", persona);
+    },
+    eliminar_si: function eliminar_si() {
+      alert("Se va a eliminar");
+    }
   }
 });
 
@@ -2138,7 +2159,7 @@ __webpack_require__.r(__webpack_exports__);
       sexo: 1,
       nombre_sexo: "Masculino"
     }, {
-      id: 1,
+      id: 3,
       cedula: "123456129",
       nombre: "Tania",
       apellido: "Escorcia",
@@ -2153,6 +2174,89 @@ __webpack_require__.r(__webpack_exports__);
     results: function results(data) {
       EventBus.$emit("buscar-personas", data);
     }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/VerPersona.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/VerPersona.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'DialogCustom',
+  data: function data() {
+    return {
+      showDialog: false,
+      sexos: [{
+        id: 1,
+        valor: "Masculino"
+      }, {
+        id: 2,
+        valor: "Femenino"
+      }],
+      cedula: "",
+      nombre: "",
+      apellido: "",
+      sexo: ""
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    EventBus.$on('activar-ventana-ver', function (data) {
+      _this.cedula = data.cedula;
+      _this.nombre = data.nombre;
+      _this.apellido = data.apellido;
+      _this.sexo = data.nombre_sexo;
+      _this.showDialog = true;
+    });
   }
 });
 
@@ -6654,6 +6758,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".md-app[data-v-74ca9536] {\n  height: 100%;\n  border: 1px solid rgba(0, 0, 0, 0.12);\n}\n.md-drawer[data-v-74ca9536] {\n  width: 230px;\n  max-width: calc(100vw - 125px);\n}\n.fuse[data-v-74ca9536] {\n  width: 100%;\n  margin-left: 5px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".md-dialog[data-v-78c392b4] {\n  max-width: 768px;\n}\n.md-card[data-v-78c392b4] {\n  width: 100%;\n  margin-top: 10px;\n  padding: 5px;\n}", ""]);
 
 // exports
 
@@ -37634,6 +37757,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -38494,37 +38647,91 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "md-card",
+    "div",
     [
-      _c(
-        "md-card-header",
-        [
-          _c("md-avatar", { staticClass: "md-avatar-icon md-primary" }, [
-            _vm._v("A")
-          ]),
-          _vm._v(" "),
-          _c("md-card-header-text", [
-            _c("div", { staticClass: "md-title" }, [_vm._v("Media card")]),
+      _vm._l(_vm.personas, function(persona) {
+        return _c(
+          "md-card",
+          { key: persona.id },
+          [
+            _c(
+              "md-card-header",
+              [
+                _c("md-avatar", { staticClass: "md-avatar-icon md-primary" }, [
+                  _vm._v(_vm._s(persona.nombre.toUpperCase().charAt(0)))
+                ]),
+                _vm._v(" "),
+                _c("md-card-header-text", [
+                  _c("div", { staticClass: "md-title" }, [
+                    _vm._v(_vm._s(persona.nombre + " " + persona.apellido))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "md-subhead" }, [
+                    _vm._v(_vm._s(persona.cedula))
+                  ])
+                ])
+              ],
+              1
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "md-subhead" }, [_vm._v("Normal size")])
-          ])
-        ],
-        1
-      ),
+            _c(
+              "md-card-actions",
+              [
+                _c(
+                  "md-button",
+                  {
+                    on: {
+                      click: function($event) {
+                        return _vm.activar_ventana_ver(persona)
+                      }
+                    }
+                  },
+                  [_vm._v("Ver")]
+                ),
+                _vm._v(" "),
+                _c("md-button", [_vm._v("Editar")]),
+                _vm._v(" "),
+                _c(
+                  "md-button",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.eliminar = true
+                      }
+                    }
+                  },
+                  [_vm._v("Eliminar")]
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      }),
       _vm._v(" "),
-      _c(
-        "md-card-actions",
-        [
-          _c("md-button", [_vm._v("Ver")]),
-          _vm._v(" "),
-          _c("md-button", [_vm._v("Editar")]),
-          _vm._v(" "),
-          _c("md-button", [_vm._v("Eliminar")])
-        ],
-        1
-      )
+      _c("md-dialog-confirm", {
+        attrs: {
+          "md-active": _vm.eliminar,
+          "md-title": "Eliminar",
+          "md-content": "¿Está seguro que desea eliminar la persona?",
+          "md-confirm-text": "Si",
+          "md-cancel-text": "No"
+        },
+        on: {
+          "update:mdActive": function($event) {
+            _vm.eliminar = $event
+          },
+          "update:md-active": function($event) {
+            _vm.eliminar = $event
+          },
+          "md-confirm": _vm.eliminar_si
+        }
+      }),
+      _vm._v(" "),
+      _c("ver-persona")
     ],
-    1
+    2
   )
 }
 var staticRenderFns = []
@@ -38780,7 +38987,7 @@ var render = function() {
             [
               _c("card-persona"),
               _vm._v(" "),
-              _c("empty-persona"),
+              _vm.personas.length == 0 ? _c("empty-persona") : _vm._e(),
               _vm._v(" "),
               _c("agregar-persona"),
               _vm._v(" "),
@@ -38802,6 +39009,208 @@ var render = function() {
           )
         ],
         1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/VerPersona.vue?vue&type=template&id=78c392b4&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/VerPersona.vue?vue&type=template&id=78c392b4&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "md-dialog",
+        {
+          staticClass: "md-layout md-scrollbar",
+          attrs: { "md-active": _vm.showDialog },
+          on: {
+            "update:mdActive": function($event) {
+              _vm.showDialog = $event
+            },
+            "update:md-active": function($event) {
+              _vm.showDialog = $event
+            }
+          }
+        },
+        [
+          _c(
+            "form",
+            { staticClass: "md-layout", attrs: { novalidate: "" } },
+            [
+              _c(
+                "md-card",
+                [
+                  _c("md-card-header", [
+                    _c("div", { staticClass: "md-title" }, [
+                      _vm._v("Agregar persona")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "md-card-content",
+                    [
+                      _c(
+                        "md-field",
+                        [
+                          _c("label", { attrs: { for: "cedula" } }, [
+                            _vm._v("Cédula")
+                          ]),
+                          _vm._v(" "),
+                          _c("md-input", {
+                            attrs: { type: "text", readonly: "" },
+                            model: {
+                              value: _vm.cedula,
+                              callback: function($$v) {
+                                _vm.cedula = $$v
+                              },
+                              expression: "cedula"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "md-field",
+                        [
+                          _c("label", { attrs: { for: "nombre" } }, [
+                            _vm._v("Nombre")
+                          ]),
+                          _vm._v(" "),
+                          _c("md-input", {
+                            attrs: { type: "text", readonly: "" },
+                            model: {
+                              value: _vm.nombre,
+                              callback: function($$v) {
+                                _vm.nombre = $$v
+                              },
+                              expression: "nombre"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "md-field",
+                        [
+                          _c("label", { attrs: { for: "apellido" } }, [
+                            _vm._v("Apellido")
+                          ]),
+                          _vm._v(" "),
+                          _c("md-input", {
+                            attrs: { type: "text", readonly: "" },
+                            model: {
+                              value: _vm.apellido,
+                              callback: function($$v) {
+                                _vm.apellido = $$v
+                              },
+                              expression: "apellido"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "md-field",
+                        [
+                          _c("label", { attrs: { for: "sexo" } }, [
+                            _vm._v("Sexo")
+                          ]),
+                          _vm._v(" "),
+                          _c("md-input", {
+                            attrs: { type: "text", readonly: "" },
+                            model: {
+                              value: _vm.sexo,
+                              callback: function($$v) {
+                                _vm.sexo = $$v
+                              },
+                              expression: "sexo"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm.sending
+                    ? _c("md-progress-bar", {
+                        attrs: { "md-mode": "indeterminate" }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "md-card-actions",
+                    [
+                      _c(
+                        "md-button",
+                        {
+                          staticClass: "md-primary",
+                          attrs: { disabled: _vm.sending },
+                          on: {
+                            click: function($event) {
+                              _vm.showDialog = false
+                            }
+                          }
+                        },
+                        [_vm._v("Cerrar")]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "md-snackbar",
+                {
+                  attrs: { "md-active": _vm.userSaved },
+                  on: {
+                    "update:mdActive": function($event) {
+                      _vm.userSaved = $event
+                    },
+                    "update:md-active": function($event) {
+                      _vm.userSaved = $event
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "The user " +
+                      _vm._s(_vm.lastUser) +
+                      " was saved with success!"
+                  )
+                ]
+              )
+            ],
+            1
+          )
+        ]
       )
     ],
     1
@@ -83878,6 +84287,7 @@ Vue.component('index-persona', __webpack_require__(/*! ./components/IndexPersona
 Vue.component('card-persona', __webpack_require__(/*! ./components/CardPersona.vue */ "./resources/js/components/CardPersona.vue")["default"]);
 Vue.component('agregar-persona', __webpack_require__(/*! ./components/AgregarPersona.vue */ "./resources/js/components/AgregarPersona.vue")["default"]);
 Vue.component('empty-persona', __webpack_require__(/*! ./components/EmptyPersona.vue */ "./resources/js/components/EmptyPersona.vue")["default"]);
+Vue.component('ver-persona', __webpack_require__(/*! ./components/VerPersona.vue */ "./resources/js/components/VerPersona.vue")["default"]);
 window.EventBus = new Vue();
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -84330,6 +84740,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexPersona_vue_vue_type_template_id_74ca9536_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexPersona_vue_vue_type_template_id_74ca9536_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/VerPersona.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/VerPersona.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VerPersona_vue_vue_type_template_id_78c392b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VerPersona.vue?vue&type=template&id=78c392b4&scoped=true& */ "./resources/js/components/VerPersona.vue?vue&type=template&id=78c392b4&scoped=true&");
+/* harmony import */ var _VerPersona_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VerPersona.vue?vue&type=script&lang=js& */ "./resources/js/components/VerPersona.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _VerPersona_vue_vue_type_style_index_0_id_78c392b4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true& */ "./resources/js/components/VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _VerPersona_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _VerPersona_vue_vue_type_template_id_78c392b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _VerPersona_vue_vue_type_template_id_78c392b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "78c392b4",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/VerPersona.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/VerPersona.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/VerPersona.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VerPersona_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./VerPersona.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/VerPersona.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VerPersona_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true&":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/components/VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true& ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_VerPersona_vue_vue_type_style_index_0_id_78c392b4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/VerPersona.vue?vue&type=style&index=0&id=78c392b4&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_VerPersona_vue_vue_type_style_index_0_id_78c392b4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_VerPersona_vue_vue_type_style_index_0_id_78c392b4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_VerPersona_vue_vue_type_style_index_0_id_78c392b4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_VerPersona_vue_vue_type_style_index_0_id_78c392b4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_VerPersona_vue_vue_type_style_index_0_id_78c392b4_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/VerPersona.vue?vue&type=template&id=78c392b4&scoped=true&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/VerPersona.vue?vue&type=template&id=78c392b4&scoped=true& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VerPersona_vue_vue_type_template_id_78c392b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./VerPersona.vue?vue&type=template&id=78c392b4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/VerPersona.vue?vue&type=template&id=78c392b4&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VerPersona_vue_vue_type_template_id_78c392b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VerPersona_vue_vue_type_template_id_78c392b4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
