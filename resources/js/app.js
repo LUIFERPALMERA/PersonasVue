@@ -11,6 +11,7 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 Vue.use(VueMaterial)
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -24,6 +25,7 @@ Vue.use(VueMaterial)
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('index-persona', require('./components/IndexPersona.vue').default);
+Vue.component('card-persona', require('./components/CardPersona.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
